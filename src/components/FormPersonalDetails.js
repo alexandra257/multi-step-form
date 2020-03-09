@@ -22,7 +22,7 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Enter Personal Details" />
+          <AppBar title="Enter Personal Details" showMenuIconButton={false} />
           <TextField
             hintText="Enter Your Occupation"
             floatingLabelText="Occupation"

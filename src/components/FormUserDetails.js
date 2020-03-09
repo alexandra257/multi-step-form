@@ -17,7 +17,7 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Enter User Details" />
+          <AppBar title="Enter User Details" showMenuIconButton={false} />
           <TextField
             hintText="Enter Your First Name"
             floatingLabelText="First Name"

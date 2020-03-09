@@ -25,7 +25,7 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Confirm User Data" />
+          <AppBar title="Confirm User Data" showMenuIconButton={false} />
           <List>
             <ListItem primaryText="First Name" secondaryText={firstName} />
             <ListItem primaryText="Last Name" secondaryText={lastName} />
