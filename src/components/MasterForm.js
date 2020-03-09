@@ -1,18 +1,14 @@
 import React from "react";
 
 function MasterForm() {
-  const drop = {
-    width: "40%"
-  };
-
   return (
-    <div style={drop}>
+    <div className="container">
       <h2>This is the MasterForm</h2>
       {/*-------MoodDrop (STEP1)------------------*/}
-      <form className="form-group border border-light ">
-        <div>
-          <h5 className="p-2">How are you feeling?</h5>
-          <select class="browser-default custom-select mb-1">
+      <form>
+        <div className="form-group">
+          <label htmlFor="moodMenu">How are you feeling today?</label>
+          <select className="form-control" id="moodMenu">
             <option value="Happy">Happy</option>
             <option value="Inspired">Inspired</option>
             <option value="Excited">Excited</option>
@@ -26,51 +22,62 @@ function MasterForm() {
           </select>
         </div>
         {/*-------INTENSITY RADIO (STEP1)------------------*/}
-        <div>
-          <h5 className="m-3">How intense is this feeling?</h5>
-          <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-            <label class="btn btn-secondary active">
+        <div className="form-group">
+          <label htmlFor="intensity">
+            How intense is this feeling?&nbsp;&nbsp;&nbsp;
+          </label>
+          <div
+            className="btn-group btn-group-toggle mb-3"
+            data-toggle="buttons"
+            id="intensity"
+          >
+            <label class="btn btn-secondary active" htmlFor="intensity1">
               <input
                 type="radio"
-                name="options"
-                id="option1"
+                name="intensity1"
+                id="intensity1"
+                value="1"
                 autocomplete="off"
                 checked
               />
               1
             </label>
-            <label class="btn btn-secondary">
+            <label class="btn btn-secondary" htmlFor="intensity2">
               <input
                 type="radio"
-                name="options"
-                id="option2"
+                name="intensity2"
+                id="intensity2"
+                value="2"
                 autocomplete="off"
               />
               2
             </label>
-            <label class="btn btn-secondary">
+            <label class="btn btn-secondary" htmlFor="intensity3">
               <input
                 type="radio"
-                name="options"
-                id="option3"
+                name="intensity3"
+                id="intensity3"
+                value="3"
                 autocomplete="off"
               />
               3
             </label>
-            <label class="btn btn-secondary">
+            <label class="btn btn-secondary" htmlFor="intensity4">
               <input
                 type="radio"
-                name="options"
-                id="option3"
+                name="intensity4"
+                id="intensity4"
+                value="4"
                 autocomplete="off"
               />
               4
             </label>
-            <label class="btn btn-secondary">
+            <label class="btn btn-secondary" htmlFor="intensity5">
               <input
                 type="radio"
-                name="options"
-                id="option3"
+                name="intensity5"
+                id="intensity5"
+                value="5"
                 autocomplete="off"
               />
               5
@@ -78,16 +85,20 @@ function MasterForm() {
           </div>
         </div>
         {/*-------MoodLog (STEP2)------------------*/}
-        <textarea
-          className="form-control"
-          id="textArea"
-          rows="5"
-          placeholder="Write a bit more about how you're feeling..."
-        ></textarea>
+        <div>
+          <textarea
+            className="form-control"
+            id="textArea"
+            rows="5"
+            placeholder="Write a bit more about how you're feeling..."
+            autoFocus
+            required
+          ></textarea>
+        </div>
         {/*-------DistortionDrop (STEP3)------------------*/}
         <div className="drop">
           <h5 className="m-3">Can you identify this distortion?</h5>
-          <select class="form-control">
+          <select class="form-control mb-3">
             <option value="All or Nothing">All or Nothing</option>
             <option value="Jumping to Conclusions">
               Jumping to Conclusions
@@ -107,16 +118,16 @@ function MasterForm() {
         {/*-------Response (STEP4)------------------*/}
         <div>
           <textarea
-            className="form-control m-3"
+            className="form-control"
             id="textArea"
             rows="5"
             placeholder="Now try to rationally respond to this thought..."
           ></textarea>
         </div>
+        <button type="button" class="btn btn-outline-secondary" name="Submit">
+          Submit
+        </button>
       </form>
-      <button type="button" class="btn btn-outline-secondary">
-        Submit
-      </button>
     </div>
   );
 }
